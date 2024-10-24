@@ -1,9 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject Loading;
+    [SerializeField]
+    private TMP_Text tip1;
+    [SerializeField]
+    private TMP_Text tip2;
+    [SerializeField]
+    private TMP_Text tip3;
+
     // Start is called before the first frame update
     void Start()
     {
