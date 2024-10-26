@@ -29,13 +29,27 @@ public class Player : MonoBehaviour
     private float raycastDistance;
 
 
+    // Storage Variables
+    [SerializeField]
+    private GameObject StorageDisplay;
+    [SerializeField]
+    private TMP_Text containerName;
+    [SerializeField]
+    private TMP_Text itemList;
+    [SerializeField]
+    private TMP_Text boxContent;
+
+    private bool inStorage;
 
 
     // Start is called before the first frame update
     void Start()
     {
         outside = false;
+        inStorage = false;
         loadDelay = 15;
+        StorageDisplay.gameObject.SetActive(false);
+        Loading.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -78,6 +92,48 @@ public class Player : MonoBehaviour
                 crosshair.text = "[><]";
                 interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
 
+                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                {
+                    ToggleStorage();
+                }
+
+                if (inStorage)
+                {
+                    // Disable walking, running and camera moving and spawn in cursor
+                    this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+                    this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 0;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 0;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+
+                    // Disable crosshair UI
+                    crosshair.gameObject.SetActive(false);
+                    interactDisplay.gameObject.SetActive(false);
+
+                    // Enable StorageUI
+                    StorageDisplay.SetActive(true);
+
+                    // Update the container Name
+                    containerName.text = hit.collider.gameObject.name;
+                }
+                else
+                {
+                    // Disables Storage UI
+                    StorageDisplay.SetActive(false);
+
+                    // Enable walking, running and camera moving and despawn cursor
+                    this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
+                    this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 10;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
+                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+
+                    // Enable Crosshair
+                    crosshair.gameObject.SetActive(true);
+                    interactDisplay.gameObject.SetActive(true);
+
+                }
+
             }
         }
         //if the ray is not hitting any of the taged objects reset the crosshair and the interaction text
@@ -98,6 +154,8 @@ public class Player : MonoBehaviour
     {
         if (outside)
         {
+            crosshair.gameObject.SetActive(false);
+            interactDisplay.gameObject.SetActive(false);
             Loading.SetActive(true);
             gameObject.GetComponent<FirstPersonController>().enabled = false;
             StartCoroutine(ScreenDelay());
@@ -125,5 +183,10 @@ public class Player : MonoBehaviour
                 outside = false;
             }
         }
+    }
+
+    private void ToggleStorage()
+    {
+        inStorage = !inStorage;
     }
 }
