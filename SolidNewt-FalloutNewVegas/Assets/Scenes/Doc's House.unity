@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 237889816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1283,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &380157915
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1597,7 +1597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &627705937
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1702,7 +1702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &780791374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3693,7 +3693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1811105143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3799,7 +3799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1816583457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3982,6 +3982,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821973704}
   m_CullTransparentMesh: 1
+--- !u!1001 &1845932055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 119846966465061841, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707479653813156884, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750927071321798278, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2993.3784
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750927071321798278, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2917.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362723696588463658, guid: 7a9c88f69e87a744aa49e37cd63707a1,
+        type: 3}
+      propertyPath: m_Name
+      value: Doc's House Interrior
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a9c88f69e87a744aa49e37cd63707a1, type: 3}
 --- !u!1 &1933966155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,7 +4083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1933966156
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4223,7 +4306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2071905223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4642,3 +4725,4 @@ SceneRoots:
   - {fileID: 627705940}
   - {fileID: 1811105146}
   - {fileID: 2071905226}
+  - {fileID: 1845932055}
