@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
 
     private bool inStorage;
 
+    [SerializeField]
+    private GameObject inventManager;
+    InventoryManager inventory;
+    private bool InventUpdate;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,9 @@ public class Player : MonoBehaviour
         loadDelay = 15;
         StorageDisplay.gameObject.SetActive(false);
         Loading.gameObject.SetActive(false);
+        inventory = inventManager.GetComponent<InventoryManager>();
+        itemList.text = "";
+        InventUpdate = false;
     }
 
     // Update is called once per frame
@@ -71,6 +78,7 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                 {
                     Debug.Log("take the item");
+                    inventory.AddToInvent(hit.collider.gameObject.name.ToString());
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -112,6 +120,7 @@ public class Player : MonoBehaviour
 
                     // Enable StorageUI
                     StorageDisplay.SetActive(true);
+                    StartCoroutine( InventUpdates());
 
                     // Update the container Name
                     containerName.text = hit.collider.gameObject.name;
@@ -131,6 +140,9 @@ public class Player : MonoBehaviour
                     // Enable Crosshair
                     crosshair.gameObject.SetActive(true);
                     interactDisplay.gameObject.SetActive(true);
+                    
+                    InventUpdate = false;
+                    itemList.text = "";
 
                 }
 
@@ -188,5 +200,32 @@ public class Player : MonoBehaviour
     private void ToggleStorage()
     {
         inStorage = !inStorage;
+    }
+
+    public void ModDisplayInvent()
+    {
+        List<string> invent = inventory.GetInventory();
+
+        for (int i = 0; i < invent.Count; i++)
+        {
+            Debug.Log(invent[i]);
+        }
+    }
+
+    private IEnumerator InventUpdates()
+    {
+        if (!InventUpdate)
+        {
+            List<string> invent = inventory.GetInventory();
+            Debug.Log(invent.Count);
+
+            for (int i = 0; i < invent.Count; i++)
+            {
+                itemList.text = itemList.text + invent[i] + "\n";
+            }
+            InventUpdate = true;
+        }
+        yield return new WaitForSeconds(1f);
+
     }
 }
