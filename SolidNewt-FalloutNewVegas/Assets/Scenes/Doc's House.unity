@@ -8672,7 +8672,6 @@ GameObject:
   - component: {fileID: 76680617301326521}
   - component: {fileID: 3045337536157845954}
   - component: {fileID: 4875799670909122497}
-  - component: {fileID: 7621651026222069201}
   m_Layer: 0
   m_Name: Boarder1
   m_TagString: Untagged
@@ -17657,9 +17656,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8544089458565952277}
+  - component: {fileID: 8544089458565952278}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46449,27 +46449,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948865804393004664}
   m_Mesh: {fileID: 3562073674547505438, guid: e8eea51ad0f30af488fb9faa96a98115, type: 3}
---- !u!65 &7621651026222069201
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596440506587125438}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 31.578255, y: 304.17972, z: 167.95361}
-  m_Center: {x: 5.499363, y: 149.99997, z: -83.97681}
 --- !u!4 &7629284594143795424
 Transform:
   m_ObjectHideFlags: 0
@@ -51204,7 +51183,7 @@ Transform:
   m_GameObject: {fileID: 2165466567479970156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2606.6218, y: -5.9999943, z: 3291}
+  m_LocalPosition: {x: 2602.3044, y: 0, z: 3297.0784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51214,6 +51193,27 @@ Transform:
   - {fileID: 5139629246587385513}
   m_Father: {fileID: 3707479654584798211}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &8544089458565952278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165466567479970156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.546318, y: 303.12872, z: 169.13385}
+  m_Center: {x: 597.76526, y: 151.06444, z: 796.3844}
 --- !u!1 &8554503342125830190
 GameObject:
   m_ObjectHideFlags: 0
