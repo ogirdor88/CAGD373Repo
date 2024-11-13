@@ -95,6 +95,17 @@ public class Player : MonoBehaviour
 
             }
 
+            if (hit.collider.CompareTag("Caps"))
+            {
+                crosshair.text = "[><]";
+                interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
+                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                {
+                    ;
+                }
+
+            }
+
             if (hit.collider.CompareTag("Storage"))
             {
                 crosshair.text = "[><]";
