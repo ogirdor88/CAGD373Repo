@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
             }
 
-            if (hit.collider.CompareTag("Caps"))
+            /*if (hit.collider.CompareTag("Caps"))
             {
                 crosshair.text = "[><]";
                 interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
                     ;
                 }
 
-            }
+            }*/
 
             if (hit.collider.CompareTag("Storage"))
             {
