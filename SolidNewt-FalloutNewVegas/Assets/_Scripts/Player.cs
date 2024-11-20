@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     private TMP_Text boxContent;
 
     private bool inStorage;
+    public static bool inSpecial;
 
     [SerializeField]
     private GameObject inventManager;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
         inventory = inventManager.GetComponent<InventoryManager>();
         itemList.text = "";
         InventUpdate = false;
-        
+        inSpecial = false;
     }
 
     // Update is called once per frame
@@ -164,6 +165,18 @@ public class Player : MonoBehaviour
 
                 }
 
+            }
+
+            // If the ray hits The Special Machine
+            if (hit.collider.CompareTag("SPECIAL"))
+            {
+                crosshair.text = "[><]";
+                interactDisplay.text = "E) Activate\n" + hit.collider.gameObject.name;
+
+                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                {
+                    inSpecial = true;
+                }
             }
         }
         //if the ray is not hitting any of the taged objects reset the crosshair and the interaction text

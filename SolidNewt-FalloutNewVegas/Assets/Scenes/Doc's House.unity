@@ -879,8 +879,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237889816}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.92, y: 1.02, z: 2.44}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.57, y: 1.02, z: 10.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -888,7 +888,7 @@ Transform:
   - {fileID: 864552287454262322}
   - {fileID: 305326341}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &237663546
 Transform:
   m_ObjectHideFlags: 0
@@ -26983,8 +26983,8 @@ Transform:
   m_GameObject: {fileID: 3776172870369178909}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 393.07642, y: 168.1487, z: 859.22095}
-  m_LocalScale: {x: 0.015156983, y: 0.023331659, z: 0.04428328}
+  m_LocalPosition: {x: 391.31, y: 126.1, z: 855.47}
+  m_LocalScale: {x: 0.01100397, y: 0.016938785, z: 0.03214966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8544089458565952277}
@@ -30871,8 +30871,8 @@ Transform:
   m_GameObject: {fileID: 4692927111900621583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 391.31628, y: 133.40118, z: 866.3293}
-  m_LocalScale: {x: 0.015156983, y: 0.18938212, z: 0.17049448}
+  m_LocalPosition: {x: 390.04, y: 100.9, z: 860.63}
+  m_LocalScale: {x: 0.01100397, y: 0.13749142, z: 0.123779}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8544089458565952277}
@@ -41984,7 +41984,7 @@ GameObject:
   - component: {fileID: 2451293475496972725}
   - component: {fileID: 7626461874762138940}
   m_Layer: 0
-  m_Name: CenterPiece_low1
+  m_Name: Vic-o-matic Vigor Tester
   m_TagString: SPECIAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
