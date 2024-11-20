@@ -5,8 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
+//Updated by KJ 11/20/24
+
 public class Player : MonoBehaviour
 {
+    //Animation variables (Added by KJ)
+    public Animator m_Animator;
+    
     //Loading screen variables
     [SerializeField]
     private GameObject Loading;
@@ -49,6 +54,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         outside = false;
         inStorage = false;
         loadDelay = 15;
@@ -57,6 +63,7 @@ public class Player : MonoBehaviour
         inventory = inventManager.GetComponent<InventoryManager>();
         itemList.text = "";
         InventUpdate = false;
+        
     }
 
     // Update is called once per frame
@@ -177,34 +184,8 @@ public class Player : MonoBehaviour
     {
         if (outside)
         {
-            crosshair.gameObject.SetActive(false);
-            interactDisplay.gameObject.SetActive(false);
-            Loading.SetActive(true);
-            gameObject.GetComponent<FirstPersonController>().enabled = false;
-            StartCoroutine(ScreenDelay());
-            if (loadDelay > 10)
-            {
-                tip1.gameObject.SetActive(true);
-                tip2.gameObject.SetActive(false);
-                tip3.gameObject.SetActive(false);
-            }
-            if (loadDelay > 5 && loadDelay < 10)
-            {
-                tip1.gameObject.SetActive(false);
-                tip2.gameObject.SetActive(true);
-                tip3.gameObject.SetActive(false);
-            }
-            if (loadDelay > 0 && loadDelay < 5)
-            {
-                tip1.gameObject.SetActive(false);
-                tip2.gameObject.SetActive(false);
-                tip3.gameObject.SetActive(true);
-            }
-            if (loadDelay <= 0)
-            {
-                SceneManager.LoadScene("Goodsprings");
-                outside = false;
-            }
+            m_Animator.SetBool("DoorOpen", true);
+            StartCoroutine(WaitToLoad());
         }
     }
 
@@ -238,5 +219,39 @@ public class Player : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
 
+    }
+
+    private IEnumerator WaitToLoad()
+    {
+        
+        yield return new WaitForSeconds(2f);
+        crosshair.gameObject.SetActive(false);
+        interactDisplay.gameObject.SetActive(false);
+        Loading.SetActive(true);
+        gameObject.GetComponent<FirstPersonController>().enabled = false;
+        StartCoroutine(ScreenDelay());
+        if (loadDelay > 10)
+        {
+            tip1.gameObject.SetActive(true);
+            tip2.gameObject.SetActive(false);
+            tip3.gameObject.SetActive(false);
+        }
+        if (loadDelay > 5 && loadDelay < 10)
+        {
+            tip1.gameObject.SetActive(false);
+            tip2.gameObject.SetActive(true);
+            tip3.gameObject.SetActive(false);
+        }
+        if (loadDelay > 0 && loadDelay < 5)
+        {
+            tip1.gameObject.SetActive(false);
+            tip2.gameObject.SetActive(false);
+            tip3.gameObject.SetActive(true);
+        }
+        if (loadDelay <= 0)
+        {
+            SceneManager.LoadScene("Goodsprings");
+            outside = false;
+        }
     }
 }
