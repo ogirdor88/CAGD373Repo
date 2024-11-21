@@ -176,6 +176,7 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                 {
                     inSpecial = true;
+                    Debug.Log("SpecialMachine");
                 }
             }
         }
