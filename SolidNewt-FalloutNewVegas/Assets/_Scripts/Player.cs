@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,13 +6,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
-//Updated by KJ 11/20/24
+//Updated by KJ 11/03/24
 
 public class Player : MonoBehaviour
 {
     //Animation variables (Added by KJ)
     public Animator m_Animator;
-    
+    public bool doorInteract;
+
+    //Audio variables (Added by KJ)
+    public AudioSource audioSource;
+    //public AudioSource audioSource2;
+    public AudioClip m_doorOpen;
+    public AudioClip m_doorClose;
+    public float volume = 0.5f;
+
     //Loading screen variables
     [SerializeField]
     private GameObject Loading;
@@ -22,7 +31,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TMP_Text tip3;
 
-    private bool outside;
+    public bool outside; //Made public so audio script can access the outside bool (updated by KJ)
     private float loadDelay;
 
     // Interaction Variable 
@@ -55,7 +64,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Goodsprings")
+        {
+            audioSource.PlayOneShot(m_doorClose, 1.0F);
+        }
 
+        doorInteract = false;
         outside = false;
         inStorage = false;
         loadDelay = 15;
@@ -99,6 +113,7 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                 {
                     outside = true;
+                    audioSource.PlayOneShot(m_doorOpen, 1.0F);
                 }
 
             }
@@ -237,7 +252,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator WaitToLoad()
     {
-        
+        //audioSource.PlayOneShot(m_doorOpen, 1.0F);
         yield return new WaitForSeconds(2f);
         crosshair.gameObject.SetActive(false);
         interactDisplay.gameObject.SetActive(false);
@@ -264,6 +279,7 @@ public class Player : MonoBehaviour
         }
         if (loadDelay <= 0)
         {
+            //audioSource.PlayOneShot(m_doorClose, 1.0F);
             SceneManager.LoadScene("Goodsprings");
             outside = false;
         }
