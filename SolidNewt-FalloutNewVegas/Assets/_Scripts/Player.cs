@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
 
     private bool inStorage;
     public static bool inSpecial;
+    public bool testing;
 
     [SerializeField]
     private GameObject inventManager;
@@ -84,114 +85,148 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        testing = inSpecial;
         LeaveHouse();
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // This creates a 'ray' at the centre of the users Screen
         RaycastHit hit; //This creates a Hit which is used to callback the object that was hit by the Raycast
 
-        if (Physics.Raycast(ray, out hit, raycastDistance)) //Actively creates a ray using the predeterminded distance
+        if (!inStorage || !inSpecial)
         {
-            // If the ray hits an Item change the crosshair and display that you can take the Item
-            if (hit.collider.CompareTag("Item"))
+            if (Physics.Raycast(ray, out hit, raycastDistance)) //Actively creates a ray using the predeterminded distance
             {
-                crosshair.text = "[><]";
-                interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
-
-                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                // If the ray hits an Item change the crosshair and display that you can take the Item
+                if (hit.collider.CompareTag("Item"))
                 {
-                    Debug.Log("take the item");
-                    inventory.AddToInvent(hit.collider.gameObject.name.ToString());
-                    Destroy(hit.collider.gameObject);
-                }
-            }
+                    crosshair.text = "[><]";
+                    interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
 
-
-            if (hit.collider.CompareTag("Door"))
-            {
-                crosshair.text = "[><]";
-                interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
-                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
-                {
-                    outside = true;
-                    audioSource.PlayOneShot(m_doorOpen, 1.0F);
+                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                    {
+                        Debug.Log("take the item");
+                        inventory.AddToInvent(hit.collider.gameObject.name.ToString());
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
 
-            }
 
-            /*if (hit.collider.CompareTag("Caps"))
-            {
-                crosshair.text = "[><]";
-                interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
-                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                if (hit.collider.CompareTag("Door"))
                 {
-                    ;
-                }
-
-            }*/
-
-            if (hit.collider.CompareTag("Storage"))
-            {
-                crosshair.text = "[><]";
-                interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
-
-                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
-                {
-                    ToggleStorage();
-                }
-
-                if (inStorage)
-                {
-                    // Disable walking, running and camera moving and spawn in cursor
-                    this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
-                    this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 0;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 0;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
-
-                    // Disable crosshair UI
-                    crosshair.gameObject.SetActive(false);
-                    interactDisplay.gameObject.SetActive(false);
-
-                    // Enable StorageUI
-                    StorageDisplay.SetActive(true);
-                    StartCoroutine( InventUpdates());
-
-                    // Update the container Name
-                    containerName.text = hit.collider.gameObject.name;
-                }
-                else
-                {
-                    // Disables Storage UI
-                    StorageDisplay.SetActive(false);
-
-                    // Enable walking, running and camera moving and despawn cursor
-                    this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
-                    this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 10;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
-                    this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
-
-                    // Enable Crosshair
-                    crosshair.gameObject.SetActive(true);
-                    interactDisplay.gameObject.SetActive(true);
-                    
-                    InventUpdate = false;
-                    itemList.text = "";
+                    crosshair.text = "[><]";
+                    interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
+                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                    {
+                        outside = true;
+                        audioSource.PlayOneShot(m_doorOpen, 1.0F);
+                    }
 
                 }
 
-            }
-
-            // If the ray hits The Special Machine
-            if (hit.collider.CompareTag("SPECIAL"))
-            {
-                crosshair.text = "[><]";
-                interactDisplay.text = "E) Activate\n" + hit.collider.gameObject.name;
-
-                if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                /*if (hit.collider.CompareTag("Caps"))
                 {
-                    inSpecial = true;
-                    Debug.Log("SpecialMachine");
+                    crosshair.text = "[><]";
+                    interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
+                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                    {
+                        ;
+                    }
+
+                }*/
+
+                if (hit.collider.CompareTag("Storage"))
+                {
+                    crosshair.text = "[><]";
+                    interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
+
+                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                    {
+                        ToggleStorage();
+                    }
+
+                    if (inStorage)
+                    {
+                        // Disable walking, running and camera moving and spawn in cursor
+                        this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+                        this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 0;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 0;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+
+                        // Disable crosshair UI
+                        crosshair.gameObject.SetActive(false);
+                        interactDisplay.gameObject.SetActive(false);
+
+                        // Enable StorageUI
+                        StorageDisplay.SetActive(true);
+                        StartCoroutine(InventUpdates());
+
+                        // Update the container Name
+                        containerName.text = hit.collider.gameObject.name;
+                    }
+                    else
+                    {
+                        // Disables Storage UI
+                        StorageDisplay.SetActive(false);
+
+                        // Enable walking, running and camera moving and despawn cursor
+                        this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
+                        this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 10;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
+                        this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+
+                        // Enable Crosshair
+                        crosshair.gameObject.SetActive(true);
+                        interactDisplay.gameObject.SetActive(true);
+
+                        InventUpdate = false;
+                        itemList.text = "";
+
+                    }
+
+                }
+
+                // If the ray hits The Special Machine
+                if (hit.collider.CompareTag("SPECIAL"))
+                {
+                    crosshair.text = "[><]";
+                    interactDisplay.text = "E) Activate\n" + hit.collider.gameObject.name;
+
+                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
+                    {
+                        inSpecial = !inSpecial;
+                        Debug.Log("SpecialMachine");
+                        if(inSpecial) 
+                        {
+                            // Disable crosshair UI
+                            crosshair.gameObject.SetActive(false);
+                            interactDisplay.gameObject.SetActive(false);
+
+                            // Disable walking, running and camera moving and spawn in cursor
+                            this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+                            this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 0;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 0;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = false;
+                        }
+                        else
+                        {
+                            // Disables Storage UI
+                            StorageDisplay.SetActive(false);
+
+                            // Enable walking, running and camera moving and despawn cursor
+                            this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
+                            this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 10;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
+                            this.gameObject.GetComponent<FirstPersonController>().m_MouseLook.lockCursor = true;
+
+                            // Enable Crosshair
+                            crosshair.gameObject.SetActive(true);
+                            interactDisplay.gameObject.SetActive(true);
+
+                        }
+                    }
                 }
             }
         }
