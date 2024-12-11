@@ -229,12 +229,12 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-        }
-        //if the ray is not hitting any of the taged objects reset the crosshair and the interaction text
-        else
-        {
-            crosshair.text = "><";
-            interactDisplay.text = "";
+            //if the ray is not hitting any of the taged objects reset the crosshair and the interaction text
+            else
+            {
+                crosshair.text = "><";
+                interactDisplay.text = "";
+            }
         }
     }
 
