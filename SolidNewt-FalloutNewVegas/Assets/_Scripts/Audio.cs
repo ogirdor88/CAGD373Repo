@@ -13,29 +13,35 @@ public class Audio : MonoBehaviour
     public Animator m_Animator;
 
     //Audio variables (Added by KJ)
-    public AudioSource audioSource;
-    public AudioClip m_doorOpen;
-    public AudioClip m_doorClose;
+    public AudioSource aud;
+    //public AudioClip m_doorOpen;
+    //public AudioClip m_doorClose;
     public float volume = 0.5f;
 
-    private bool falseOutside;
+    //private bool falseOutside;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        falseOutside = player.GetComponent<Player>().doorInteract;
+        aud = GetComponent<AudioSource>();
+        //falseOutside = player.GetComponent<Player>().doorInteract;
     }
 
     // Update is called once per frame
     void Update()
     {
-        falseOutside = player.GetComponent<Player>().doorInteract;
+        /*falseOutside = player.GetComponent<Player>().doorInteract;
 
         if (falseOutside == true)
         {
             //falseOutside = false;
             audioSource.PlayOneShot(m_doorOpen, 1.0F);
-        }
+        }*/
+    }
+
+    public void play_sound()
+    {
+        aud.Play();
     }
 }
