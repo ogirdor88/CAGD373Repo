@@ -13,7 +13,8 @@ public class Audio : MonoBehaviour
     public Animator m_Animator;
 
     //Audio variables (Added by KJ)
-    public AudioSource aud;
+    public AudioSource src;
+    public AudioClip cont_locker1, cont_locker2, cont_locker3, cont_medpack1, cont_medpack2;
     //public AudioClip m_doorOpen;
     //public AudioClip m_doorClose;
     public float volume = 0.5f;
@@ -24,7 +25,7 @@ public class Audio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aud = GetComponent<AudioSource>();
+        src = GetComponent<AudioSource>();
         //falseOutside = player.GetComponent<Player>().doorInteract;
     }
 
@@ -40,8 +41,43 @@ public class Audio : MonoBehaviour
         }*/
     }
 
-    public void play_sound()
+    public void play_openLocker()
     {
-        aud.Play();
+        src.volume = 1f;
+        src.pitch = 1f;
+        src.clip = cont_locker1;
+        src.Play();
+    }
+
+    public void play_closeLocker1()
+    {
+        src.volume = 1f;
+        src.pitch = 1.8f;
+        src.clip = cont_locker2;
+        src.Play();
+    }
+
+    public void play_closeLocker2()
+    {
+        src.volume = 1f;
+        src.pitch = 1.5f;
+        src.clip = cont_locker3;
+        src.Play();
+    }
+
+    public void play_openMedpack()
+    {
+        src.volume = .5f;
+        src.pitch = 1.5f;
+        src.clip = cont_medpack1;
+        src.Play();
+    }
+
+    public void play_closeMedpack()
+    {
+        src.volume = 1f;
+        src.pitch = 1f;
+        src.clip = cont_medpack2;
+        src.Play();
     }
 }
