@@ -102,6 +102,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1812051131775632530, guid: e47706b02e9a6cc4b96f6e5337530296,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463791817091741376, guid: e47706b02e9a6cc4b96f6e5337530296,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 7196030281467395927, guid: e47706b02e9a6cc4b96f6e5337530296,
         type: 3}
       propertyPath: m_Name
@@ -126,10 +136,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4700201834240630836}
     m_Modifications:
+    - target: {fileID: 3565260445217383217, guid: aabf3f2fc0ea264419aebb33146f5f7f,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846761431104099569, guid: aabf3f2fc0ea264419aebb33146f5f7f,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 7434622558235609607, guid: aabf3f2fc0ea264419aebb33146f5f7f,
         type: 3}
       propertyPath: m_Name
       value: Book Group 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353920137446370528, guid: aabf3f2fc0ea264419aebb33146f5f7f,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 9040862110589340920, guid: aabf3f2fc0ea264419aebb33146f5f7f,
         type: 3}
@@ -344,6 +369,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1812051131775632530, guid: e47706b02e9a6cc4b96f6e5337530296,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463791817091741376, guid: e47706b02e9a6cc4b96f6e5337530296,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 7196030281467395927, guid: e47706b02e9a6cc4b96f6e5337530296,
         type: 3}
       propertyPath: m_Name
@@ -368,10 +403,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4700201834240630836}
     m_Modifications:
+    - target: {fileID: 1684259101226707806, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 1797223545051617653, guid: ad08d6acd118d9542a6260549ac28bf1,
         type: 3}
       propertyPath: m_Name
       value: Book Group 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342660802528327692, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783375133632657460, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 4122732818441603381, guid: ad08d6acd118d9542a6260549ac28bf1,
         type: 3}
@@ -522,6 +572,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book Group 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7928546759720937943, guid: 05d7f2fb5ca24de48bc1a00c8fd10f34,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -541,10 +596,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4700201834240630836}
     m_Modifications:
+    - target: {fileID: 1684259101226707806, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 1797223545051617653, guid: ad08d6acd118d9542a6260549ac28bf1,
         type: 3}
       propertyPath: m_Name
       value: Book Group 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342660802528327692, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783375133632657460, guid: ad08d6acd118d9542a6260549ac28bf1,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 4122732818441603381, guid: ad08d6acd118d9542a6260549ac28bf1,
         type: 3}
@@ -615,6 +685,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4700201834240630836}
     m_Modifications:
+    - target: {fileID: 2220056250303438521, guid: 3fc2f9bd9e0679c4387f0e7d0819ec87,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191386707894588894, guid: 3fc2f9bd9e0679c4387f0e7d0819ec87,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 7673784887386364869, guid: 3fc2f9bd9e0679c4387f0e7d0819ec87,
         type: 3}
       propertyPath: m_Name
@@ -981,10 +1061,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2630104710614125667, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640987762203442473, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145173083598170192, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 5203718918328488962, guid: e75b3f39bc2682c4db501efe8c49edc5,
         type: 3}
       propertyPath: m_Name
       value: Book Group 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408120301394983309, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779322400190419200, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584151238891408712, guid: e75b3f39bc2682c4db501efe8c49edc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1005,6 +1115,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4700201834240630836}
     m_Modifications:
+    - target: {fileID: 1729598861678456393, guid: 21a2f8326da0a7a40832be91aee99888,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 5596636732345097190, guid: 21a2f8326da0a7a40832be91aee99888,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,6 +1134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923164355520562560, guid: 21a2f8326da0a7a40832be91aee99888,
+        type: 3}
+      propertyPath: m_Name
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 6957686208412759340, guid: 21a2f8326da0a7a40832be91aee99888,
         type: 3}

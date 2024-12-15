@@ -13620,6 +13620,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1994002771736248384, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13653,7 +13658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 2808153724379903874, guid: 5562366fc61e9e04d9da44924c5d3ea9,
     type: 3}
-  doorInteract: 0
+  m_ContainerAnimator: {fileID: 0}
   audioSource: {fileID: 412773585}
   m_doorOpen: {fileID: 8300000, guid: 639d9e528ca5e0c44add552ff7787795, type: 3}
   m_doorClose: {fileID: 8300000, guid: e0df84ed1e5edd54b8ec3869d471e496, type: 3}
@@ -21511,6 +21516,11 @@ PrefabInstance:
     - target: {fileID: 4478962591510316567, guid: 4b3e58331dd6c244c96443306c205ed6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405937933649651079, guid: 4b3e58331dd6c244c96443306c205ed6,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897664232712804919, guid: 4b3e58331dd6c244c96443306c205ed6,

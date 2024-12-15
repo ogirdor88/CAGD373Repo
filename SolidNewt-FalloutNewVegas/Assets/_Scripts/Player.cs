@@ -6,16 +6,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
-//Updated by KJ 11/03/24
+//Participators: Rodrigo Lopez-Patino, Katherine Jackson
 
 public class Player : MonoBehaviour
 {
     //Animation variables (Added by KJ)
     public Animator m_Animator;
     public Animator m_ContainerAnimator;
-    public bool doorInteract;
-    public bool medPackInteract;
-    public bool footlockerInteract;
 
     //Audio variables (Added by KJ)
     public AudioSource audioSource;
@@ -73,9 +70,6 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(m_doorClose, 1.0F);
         }
 
-        medPackInteract = false;
-        footlockerInteract = false;
-        doorInteract = false;
         outside = false;
         inStorage = false;
         loadDelay = 15;
@@ -90,7 +84,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //m_Animator.enabled = true;
 
         testing = inSpecial;
         LeaveHouse();
@@ -131,17 +124,6 @@ public class Player : MonoBehaviour
 
                 }
 
-                /*if (hit.collider.CompareTag("Caps"))
-                {
-                    crosshair.text = "[><]";
-                    interactDisplay.text = "E) Take\n" + hit.collider.gameObject.name;
-                    if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
-                    {
-                        ;
-                    }
-
-                }*/
-
                 if (hit.collider.CompareTag("Storage"))
                 {
                     crosshair.text = "[><]";
@@ -151,15 +133,24 @@ public class Player : MonoBehaviour
                     {
                         if (hit.collider.gameObject.name == "Medpack")
                         {
-                            m_ContainerAnimator = hit.collider.gameObject.GetComponent<Animator>();
+                            m_ContainerAnimator = hit.collider.gameObject.GetComponent<Animator>();                            
                             m_ContainerAnimator.SetBool("MedpackOpen", true);
+                            //StartCoroutine(WaitToOpen());
+                        }
+                        if (hit.collider.gameObject.name == "Footlocker" || hit.collider.gameObject.name == "Ammo Box")
+                        {
+                            m_ContainerAnimator = hit.collider.gameObject.GetComponent<Animator>();                         
+                            m_ContainerAnimator.SetBool("FootlockerOpen", true);
+                            //StartCoroutine(WaitToOpen());
                         }
                         ToggleStorage();
                     }
 
                     if (inStorage)
                     {
-                        m_Animator = hit.collider.gameObject.GetComponent<Animator>();
+                        //m_Animator = hit.collider.gameObject.GetComponent<Animator>();
+
+                        StartCoroutine(WaitToOpen());
 
                         // Disable walking, running and camera moving and spawn in cursor
                         this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
@@ -181,7 +172,8 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
-                        //m_ContainerAnimator.SetBool("medpackClosing", true);
+                        m_ContainerAnimator.SetBool("MedpackOpen", false);
+                        m_ContainerAnimator.SetBool("FootlockerOpen", false);
 
                         // Disables Storage UI
                         StorageDisplay.SetActive(false);

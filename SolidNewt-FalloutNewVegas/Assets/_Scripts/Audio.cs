@@ -15,30 +15,13 @@ public class Audio : MonoBehaviour
     //Audio variables (Added by KJ)
     public AudioSource src;
     public AudioClip cont_locker1, cont_locker2, cont_locker3, cont_medpack1, cont_medpack2;
-    //public AudioClip m_doorOpen;
-    //public AudioClip m_doorClose;
     public float volume = 0.5f;
-
-    //private bool falseOutside;
 
 
     // Start is called before the first frame update
     void Start()
     {
         src = GetComponent<AudioSource>();
-        //falseOutside = player.GetComponent<Player>().doorInteract;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*falseOutside = player.GetComponent<Player>().doorInteract;
-
-        if (falseOutside == true)
-        {
-            //falseOutside = false;
-            audioSource.PlayOneShot(m_doorOpen, 1.0F);
-        }*/
     }
 
     public void play_openLocker()
