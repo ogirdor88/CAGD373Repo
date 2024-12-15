@@ -95,7 +95,14 @@ public class SPECIALMachineHandler : MonoBehaviour
         if (skillpoints >0)
         {
             temp++;
-            skillpoints--;
+            if (temp < 10)
+            {
+                skillpoints--;
+            }
+            else
+            {
+                temp = 10;
+            }
             SetSelectedSkill(temp);
         }
         else
