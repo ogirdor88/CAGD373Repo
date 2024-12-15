@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
 {
     //Animation variables (Added by KJ)
     public Animator m_Animator;
+    public Animator m_ContainerAnimator;
     public bool doorInteract;
+    public bool medPackInteract;
+    public bool footlockerInteract;
 
     //Audio variables (Added by KJ)
     public AudioSource audioSource;
@@ -70,6 +73,8 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(m_doorClose, 1.0F);
         }
 
+        medPackInteract = false;
+        footlockerInteract = false;
         doorInteract = false;
         outside = false;
         inStorage = false;
@@ -85,6 +90,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //m_Animator.enabled = true;
+
         testing = inSpecial;
         LeaveHouse();
 
@@ -116,6 +123,8 @@ public class Player : MonoBehaviour
                     interactDisplay.text = "E) Open\n" + hit.collider.gameObject.name;
                     if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                     {
+                        //m_Animator = hit.collider.gameObject.GetComponent<Animator>();
+                        m_Animator.SetBool("DoorOpen", true);
                         outside = true;
                         audioSource.PlayOneShot(m_doorOpen, 1.0F);
                     }
@@ -140,11 +149,18 @@ public class Player : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                     {
+                        if (hit.collider.gameObject.name == "Medpack")
+                        {
+                            m_ContainerAnimator = hit.collider.gameObject.GetComponent<Animator>();
+                            m_ContainerAnimator.SetBool("MedpackOpen", true);
+                        }
                         ToggleStorage();
                     }
 
                     if (inStorage)
                     {
+                        m_Animator = hit.collider.gameObject.GetComponent<Animator>();
+
                         // Disable walking, running and camera moving and spawn in cursor
                         this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
                         this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
@@ -165,8 +181,13 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
+                        //m_ContainerAnimator.SetBool("medpackClosing", true);
+
                         // Disables Storage UI
                         StorageDisplay.SetActive(false);
+
+                        // Plays animation to close medpack
+                        //m_Animator.Play("medpackClosing");
 
                         // Enable walking, running and camera moving and despawn cursor
                         this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 5;
