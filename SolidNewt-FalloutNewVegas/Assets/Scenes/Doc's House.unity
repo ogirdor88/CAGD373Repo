@@ -3941,7 +3941,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 237889816}
+      objectReference: {fileID: 237889818}
     - target: {fileID: 8591241546481069102, guid: a5b69cda2ab1e0a4a882c2470ab39e4e,
         type: 3}
       propertyPath: cameraS
@@ -3962,6 +3962,11 @@ PrefabInstance:
       propertyPath: itemDisplay
       value: 
       objectReference: {fileID: 1239844108}
+    - target: {fileID: 8591241546481069102, guid: a5b69cda2ab1e0a4a882c2470ab39e4e,
+        type: 3}
+      propertyPath: totalPoints
+      value: 
+      objectReference: {fileID: 398908566}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4524,6 +4529,12 @@ Transform:
   - {fileID: 1685065010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &398908566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2076990561864533373, guid: a5b69cda2ab1e0a4a882c2470ab39e4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 340342240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &411970100
 GameObject:
   m_ObjectHideFlags: 0

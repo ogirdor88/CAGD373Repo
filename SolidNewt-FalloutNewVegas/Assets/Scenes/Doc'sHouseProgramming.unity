@@ -1381,7 +1381,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 2033789673}
+  m_ContainerAnimator: {fileID: 0}
   doorInteract: 0
+  medPackInteract: 0
+  footlockerInteract: 0
   audioSource: {fileID: 0}
   m_doorOpen: {fileID: 0}
   m_doorClose: {fileID: 0}
@@ -5577,6 +5580,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693269436}
   m_Mesh: {fileID: 8659943070623925175, guid: 7df7782c720800f44abb9514a8df8e20, type: 3}
+--- !u!1 &1716428700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2076990561864533373, guid: a5b69cda2ab1e0a4a882c2470ab39e4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3309324177034283828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741728869
 GameObject:
   m_ObjectHideFlags: 0
@@ -22611,6 +22620,11 @@ PrefabInstance:
       propertyPath: itemDisplay
       value: 
       objectReference: {fileID: 877279036}
+    - target: {fileID: 8591241546481069102, guid: a5b69cda2ab1e0a4a882c2470ab39e4e,
+        type: 3}
+      propertyPath: totalPoints
+      value: 
+      objectReference: {fileID: 1716428700}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -11,7 +11,7 @@ public class SPECIALMachineHandler : MonoBehaviour
     [SerializeField]
     private GameObject player, uiContainer, crosshair, itemDisplay, b1,b2,b3,b4,b5,b6,b7,b8,b9,b10, selection;
     [SerializeField]
-    private GameObject cameraS;
+    private GameObject cameraS, totalPoints;
 
     private int select, sStat, pStat, eStat, cStat, iStat, aStat, lStat, skillpoints, tempskill;
 
@@ -41,6 +41,7 @@ public class SPECIALMachineHandler : MonoBehaviour
         skillpoints = 5;
         select = 0;
         selection.SetActive(false);
+        totalPoints.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,6 +54,7 @@ public class SPECIALMachineHandler : MonoBehaviour
             uiContainer.SetActive(true);
             Debug.Log("heheXD");
             selection.SetActive(true);
+            totalPoints.SetActive(true);
         }
         else
         {
@@ -60,6 +62,7 @@ public class SPECIALMachineHandler : MonoBehaviour
             cameraS.SetActive(false);
             uiContainer.SetActive(false);
             selection.SetActive(false);
+            totalPoints.SetActive(false);
         }
         Debug.Log(select);
         SelectedArea();
