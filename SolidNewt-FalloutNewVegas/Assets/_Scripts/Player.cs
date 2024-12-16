@@ -148,10 +148,6 @@ public class Player : MonoBehaviour
 
                     if (inStorage)
                     {
-                        //m_Animator = hit.collider.gameObject.GetComponent<Animator>();
-
-                        StartCoroutine(WaitToOpen());
-
                         // Disable walking, running and camera moving and spawn in cursor
                         this.gameObject.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
                         this.gameObject.GetComponent<FirstPersonController>().m_RunSpeed = 0;
